@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Randevu Al | Kuaför Avcı Kardeşler</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      color: #333;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #e67e22;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #cf711f;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .back-link a {
+      color: #e67e22;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Randevu Al</h1>
+    <form action="#" method="post">
+      <label for="ad">Ad Soyad</label>
+      <input type="text" id="ad" name="ad" required>
+
+      <label for="telefon">Telefon Numarası</label>
+      <input type="tel" id="telefon" name="telefon" placeholder="+90..." required>
+
+      <label for="tarih">Tarih</label>
+      <input type="date" id="tarih" name="tarih" required>
+
+      <label for="saat">Saat</label>
+      <input type="time" id="saat" name="saat" required>
+
+      <label for="kuafor">Kuaför Seçimi</label>
+      <select id="kuafor" name="kuafor" required>
+        <option value="">Lütfen seçin</option>
+        <option value="Mustafa Avcı">Mustafa Avcı</option>
+        <option value="Samet Avcı">Samet Avcı</option>
+        <option value="Fark etmez">Fark etmez</option>
+      </select>
+
+      <label for="hizmet">Hizmet Türü</label>
+      <select id="hizmet" name="hizmet">
+        <option>Erkek Saç Kesimi</option>
+        <option>Saç Boyama</option>
+        <option>Ombre / Balayage</option>
+        <option>Sakal Tıraşı</option>
+        <option>Cilt Bakımı</option>
+      </select>
+
+      <label for="not">Ekstra Not</label>
+      <textarea id="not" name="not" rows="3" placeholder="Özel bir isteğiniz varsa yazın..."></textarea>
+
+      <button type="submit">Randevuyu Gönder</button>
+    </form>
+
+    <div class="back-link">
+      <a href="anasyfa.html">← Ana Sayfaya Dön</a>
+    </div>
+  </div>
+
+</body>
+</html>

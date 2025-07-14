@@ -1,0 +1,372 @@
+  <!DOCTYPE html>
+  <html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kuaför Avcı Kardeşler</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #fff;
+        color: #333;
+      }
+
+      header {
+        background-color: #111;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+      }
+
+      .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+      }
+
+      .logo span {
+        color: #e67e22;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      nav ul li a:hover {
+        color: #e67e22;
+      }
+
+      .hero {
+        background: url('https://images.unsplash.com/photo-1607082352196-4d8b100a38d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: relative;
+        text-align: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 600px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        background-color: #e67e22;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #cf711f;
+      }
+
+      .section {
+        padding: 60px 40px;
+        text-align: center;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .section p {
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto 40px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 0 40px;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .awards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .awards img {
+        width: 300px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .service-table {
+        width: 80%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        text-align: left;
+      }
+
+      .service-table th, .service-table td {
+        padding: 20px;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+
+      .service-table th {
+        background-color: #e67e22;
+        color: white;
+        font-weight: bold;
+      }
+
+      .service-table td {
+        font-size: 1.1rem;
+      }
+
+      .service-table tr:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+      }
+
+      .service-table .icon {
+        font-size: 1.5rem;
+        color: #e67e22;
+        margin-right: 10px;
+      }
+
+      #hakkimizda {
+        position: relative;
+        background: url('https://images.unsplash.com/photo-1581320747723-1b94b4ad800f') center/cover no-repeat;
+        padding: 80px 40px;
+        color: white;
+        text-align: center;
+        background-size: cover;
+      }
+
+      #hakkimizda .about-background {
+        position: relative;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 40px;
+        border-radius: 8px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .team {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        margin-top: 40px;
+      }
+
+      .member {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        width: 250px;
+        text-align: center;
+        backdrop-filter: blur(4px);
+        color: #fff;
+      }
+
+      .member img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        border: 3px solid #e67e22;
+      }
+
+      .member h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+
+      .member p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: #e67e22;
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .awards img {
+          width: 90%;
+        }
+
+        #hakkimizda h2 {
+          font-size: 2rem;
+        }
+
+        #hakkimizda p {
+          font-size: 1rem;
+        }
+
+        .member {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <div class="logo">Kuaför <span>Avcı Kardeşler</span></div>
+      <nav>
+        <ul>
+          <li><a href="#">Ana Sayfa</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#hizmetler">Hizmetler</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Tarzınıza Tarz Katıyoruz</h1>
+        <p>Profesyonel hizmet, modern kesimler, müşteri memnuniyeti.</p>
+        <a href="randevu.html" class="btn">Randevu Al</a>
+      </div>
+    </section>
+
+    <section class="section" id="hakkimizda">
+      <div class="about-background">
+        <h2>Hakkımızda</h2>
+        <p>Kuaför Avcı Kardeşler, yılların deneyimiyle, kaliteli saç kesimi ve bakım hizmetleri sunmaktadır. Modern ve kişiye özel tarzlar yaratırken, müşteri memnuniyetini her zaman ön planda tutuyoruz.</p>
+
+        <div class="team">
+          <div class="member">
+            <img src="webkuaför/img/Screenshot_2.png" alt="Mustafa Avcı">
+            <h3>Mustafa Avcı</h3>
+            <p>15 yıllık kuaförlük deneyimiyle klasik ve modern saç kesimlerinde uzmandır. Detaylara verdiği önemle bilinir.Çalışma saatleri esnektir kafasına göre çalışır.Eleştirileri hiç kabul etmez.</p>
+          </div>
+          <div class="member">
+            <img src="webkuaför/img/Screenshot_1.png" alt="Samet Avcı">
+            <h3>Samet Avcı</h3>
+            <p>Renk uzmanı olan Samet Bey, saç boyama ve ombre uygulamalarında fark yaratmaktadır. Estetik anlayışı ile dikkat çeker.Kendini geliştirmeye açıktır ve eleştirleri bir nebze kabul eder.</p>
+          </div>
+        </div>
+
+  <a href="#iletisim" class="btn" style="margin-top: 30px; display: inline-block;">Bize ulaşın</a>
+      </div>
+    </section>
+
+    <section class="section" id="hizmetler">
+      <h2>Hizmetlerimiz</h2>
+      <table class="service-table">
+        <thead>
+          <tr>
+            <th>Hizmet</th>
+            <th>Açıklama</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="icon">✂️</span> Erkek Saç Kesimi</td>
+            <td>Modern ve kişiye özel saç kesimleri ile tarzınızı yansıtıyoruz.</td>
+          </tr>
+          <tr>
+            <td><span class="icon">🎨</span> Saç Boyama & Ombre</td>
+            <td>Saç renginizi değiştirmek veya ombre uygulamaları ile fark yaratın.</td>
+          </tr>
+          <tr>
+            <td><span class="icon">💆</span> Saç Bakımı ve Keratin</td>
+            <td>Saçlarınıza derinlemesine bakım yaparak daha sağlıklı ve parlak görünmelerini sağlıyoruz.</td>
+          </tr>
+          <tr>
+            <td><span class="icon">🧴</span> Sakal Tıraşı & Cilt Bakımı</td>
+            <td>Sakalınızı özenle tıraş ediyor, cilt bakımını ihmal etmiyoruz.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section awards">
+      <h2>Başarılarımız</h2>
+      <img src="webkuaför/ödül.webp" alt="Ödül Alan Kuaför">
+      <p>Mesleki yarışmalarda ödül kazanmış profesyonel bir ekip ile hizmet veriyoruz.</p>
+    </section>
+
+    <section class="section" id="galeri">
+      <h2>Galeri</h2>
+    <div class="gallery">
+    <img src="webkuaför/dükkanfotosu.webp" alt="Kuaför Dükkanı" style="height: 700px;">
+    <img src="webkuaför/sackesimi.jpg" alt="Saç Kesimi 1" style="height: 600px;">
+    <img src="webkuaför/sackesimi2.jpg" alt="Saç Kesimi 2" style="height: 600px;">
+  </div>
+    </section>
+
+    <footer id="iletisim">
+      <p>Adres: Örnek Mah. 123. Sok. No:45, İstanbul</p>
+      <p>Telefon: <a href="tel:+905068257548">+90 506 825 75 48</a></p>
+      <p>Telefon: <a href="tel:+905546439806">+90 554 643 98 06</a></p>
+      <p>&copy; 2025 Kuaför Avcı Kardeşler. Tüm hakları saklıdır.</p>
+    </footer>
+
+  </body>
+  </html>
